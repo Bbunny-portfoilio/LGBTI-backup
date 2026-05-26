@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>태그 필터 + 페이징</title>
+
+<style>
+  body {
+    font-family: sans-serif;
+    background: #f5f5f5;
+    padding: 30px;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  /* 태그 메뉴 */
+  .tag-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .tag {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+  }
+
+  .tag:hover {
+    background: #eee;
+  }
+
+  .tag.active {
+    background: #0078ff;
+    color: white;
+    border-color: #0078ff;
+  }
+
+  /* 게시글 */
+  .posts {
+    display: grid;
+    gap: 16px;
+  }
+
+  .post {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  .post h3 {
+    margin-top: 0;
+  }
+
+  .post-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .post-tag {
+    font-size: 12px;
+    background: #eef3ff;
+    color: #3366cc;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  /* 페이지네이션 */
+  .pagination {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+
+  .page-btn {
+    min-width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+
+  .page-btn.active {
+    background: #0078ff;
+    color: white;
+  }
+
+  .page-btn:hover {
+    background: #ddd;
+  }
+
+  .page-btn.active:hover {
+    background: #0078ff;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+<script type="module" src="./js/common.js"></script>
+</head>
+
+<body>
+
+<h1>게시글 태그 필터 + 페이징</h1>
+
+<!-- 태그 메뉴 -->
+<div class="tag-menu">
+  <div class="tag" data-tag="HTML">HTML</div>
+  <div class="tag" data-tag="CSS">CSS</div>
+  <div class="tag" data-tag="JavaScript">JavaScript</div>
+  <div class="tag" data-tag="React">React</div>
+</div>
+
+<!-- 게시글 영역 -->
+<div class="posts" id="posts"></div>
+
+<!-- 페이지네이션 -->
+<div class="pagination" id="pagination"></div>
+</body>
+</html>

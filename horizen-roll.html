@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .item {
+            min-width: 200px;
+            height: 120px;
+            background: coral;
+            flex: 0 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="scroll" class="scroll-container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+    <script>
+        const container = document.getElementById("scroll");
+
+        container.addEventListener("wheel", (e) => {
+            e.preventDefault(); // 세로 스크롤 막기
+            container.scrollLeft += e.deltaY;
+        });
+    </script>
+</body>
+
+
+</html>
